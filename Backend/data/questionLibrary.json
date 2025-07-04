@@ -1,0 +1,728 @@
+{
+"catogories":{
+   "JavaScript": [
+  {
+    "question": "What is the difference between var, let, and const?",
+    "answer": "`var` is function-scoped and can be redeclared. `let` and `const` are block-scoped, but `const` cannot be reassigned after declaration.",
+    "keywords": ["var", "let", "const", "function-scoped", "block-scoped", "redeclared", "reassigned"]
+  },
+  {
+    "question": "Explain the concept of closures in JavaScript.",
+    "answer": "A closure is a function that retains access to its lexical scope even when executed outside of that scope.",
+    "keywords": ["closure", "function", "lexical scope", "access", "outside"]
+  },
+  {
+    "question": "What is hoisting in JavaScript?",
+    "answer": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope before code execution.",
+    "keywords": ["hoisting", "declarations", "top", "scope", "execution"]
+  },
+  {
+    "question": "What are arrow functions and how do they differ from regular functions?",
+    "answer": "Arrow functions are concise syntax for writing functions and do not have their own `this` context, which makes them ideal for callbacks.",
+    "keywords": ["arrow functions", "syntax", "this", "callback", "concise"]
+  },
+  {
+    "question": "Explain event delegation.",
+    "answer": "Event delegation allows you to handle events at a parent level instead of individual child elements using event bubbling.",
+    "keywords": ["event delegation", "bubbling", "parent", "child", "handle"]
+  },
+  {
+    "question": "What is the difference between == and ===?",
+    "answer": "`==` compares values with type coercion, while `===` compares both value and type without coercion.",
+    "keywords": ["==", "===", "coercion", "type", "value"]
+  },
+  {
+    "question": "What is the 'this' keyword in JavaScript?",
+    "answer": "`this` refers to the object that is executing the current function. Its value depends on how the function is called.",
+    "keywords": ["this", "object", "function", "called", "value"]
+  },
+  {
+    "question": "What is the purpose of promises?",
+    "answer": "Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value.",
+    "keywords": ["promises", "asynchronous", "completion", "value", "operation"]
+  },
+  {
+    "question": "What are async/await?",
+    "answer": "`async/await` are syntax sugar for working with Promises, making asynchronous code look synchronous.",
+    "keywords": ["async", "await", "promises", "asynchronous", "synchronous"]
+  },
+  {
+    "question": "What is a callback function?",
+    "answer": "A callback is a function passed into another function as an argument and executed after some operation is completed.",
+    "keywords": ["callback", "function", "argument", "operation", "executed"]
+  },
+  {
+    "question": "What is the difference between null and undefined?",
+    "answer": "`undefined` means a variable has been declared but not assigned. `null` is an assignment value representing no value.",
+    "keywords": ["null", "undefined", "assigned", "value", "declared"]
+  },
+  {
+    "question": "Explain the concept of prototypal inheritance.",
+    "answer": "Prototypal inheritance allows objects to inherit properties and methods from other objects via their prototype chain.",
+    "keywords": ["prototypal", "inheritance", "objects", "properties", "prototype"]
+  },
+  {
+    "question": "What are template literals?",
+    "answer": "Template literals are string literals allowing embedded expressions using backticks and `${}` syntax.",
+    "keywords": ["template literals", "expressions", "backticks", "syntax"]
+  },
+  {
+    "question": "What is the event loop in JavaScript?",
+    "answer": "The event loop is responsible for executing asynchronous code by checking the call stack and the task queue.",
+    "keywords": ["event loop", "asynchronous", "call stack", "task queue"]
+  },
+  {
+    "question": "What are higher-order functions?",
+    "answer": "Higher-order functions are functions that take other functions as arguments or return them as results.",
+    "keywords": ["higher-order", "functions", "arguments", "return"]
+  },
+  {
+    "question": "What is a debounce function?",
+    "answer": "Debouncing limits the rate a function is executed. It ensures the function runs only after a specified time has passed without it being called again.",
+    "keywords": ["debounce", "function", "rate", "delay", "executed"]
+  },
+  {
+    "question": "What is throttling in JavaScript?",
+    "answer": "Throttling ensures a function is only executed once in a specified period, regardless of how many times it's triggered.",
+    "keywords": ["throttling", "function", "executed", "triggered", "period"]
+  },
+  {
+    "question": "What are JavaScript data types?",
+    "answer": "JavaScript has primitive types (String, Number, Boolean, Null, Undefined, Symbol, BigInt) and objects.",
+    "keywords": ["data types", "primitive", "string", "number", "boolean", "object"]
+  },
+  {
+    "question": "How does the spread operator work?",
+    "answer": "The spread operator (`...`) expands an array or object into individual elements or properties.",
+    "keywords": ["spread operator", "...", "array", "object", "elements"]
+  },
+  {
+    "question": "What is a pure function?",
+    "answer": "A pure function is a function that returns the same output for the same input and has no side effects.",
+    "keywords": ["pure function", "output", "input", "side effects"]
+  }
+]
+,
+      "HTML": [
+  {
+    "question": "What does HTML stand for?",
+    "answer": "HTML stands for HyperText Markup Language. It is used to create the structure of web pages.",
+    "keywords": ["html", "hypertext", "markup", "language", "structure", "web pages"]
+  },
+  {
+    "question": "What is the purpose of the <!DOCTYPE> declaration?",
+    "answer": "The <!DOCTYPE> declaration defines the HTML version and ensures the browser renders the page in standards mode.",
+    "keywords": ["doctype", "html version", "render", "browser", "standards"]
+  },
+  {
+    "question": "What are semantic HTML elements?",
+    "answer": "Semantic elements clearly describe their meaning in a human- and machine-readable way, such as <article>, <section>, <nav>, and <header>.",
+    "keywords": ["semantic", "html", "article", "section", "nav", "header"]
+  },
+  {
+    "question": "What is the difference between <div> and <span>?",
+    "answer": "<div> is a block-level element used to group content, while <span> is an inline element used for styling small parts of content.",
+    "keywords": ["div", "span", "block", "inline", "group", "content"]
+  },
+  {
+    "question": "What is the difference between id and class in HTML?",
+    "answer": "`id` is a unique identifier used once per page, while `class` can be reused on multiple elements for styling or scripting.",
+    "keywords": ["id", "class", "unique", "reuse", "styling", "scripting"]
+  },
+  {
+    "question": "What are data attributes in HTML?",
+    "answer": "Data attributes allow you to store extra data on HTML elements using attributes like `data-name`, accessible via JavaScript.",
+    "keywords": ["data attributes", "data-", "html", "extra data", "javascript"]
+  },
+  {
+    "question": "What is the use of the <meta> tag in HTML?",
+    "answer": "The <meta> tag provides metadata about the HTML document, such as character set, viewport settings, or author.",
+    "keywords": ["meta", "metadata", "character set", "viewport", "author"]
+  },
+  {
+    "question": "What is the purpose of the alt attribute on images?",
+    "answer": "The `alt` attribute provides alternative text for images, improving accessibility and SEO.",
+    "keywords": ["alt", "images", "accessibility", "seo", "alternative text"]
+  },
+  {
+    "question": "What is the difference between <strong> and <b>?",
+    "answer": "<strong> indicates importance and is semantic, while <b> is only presentational and bolds text without implying importance.",
+    "keywords": ["strong", "b", "semantic", "presentational", "importance"]
+  },
+  {
+    "question": "What is the purpose of the <form> element?",
+    "answer": "The <form> element is used to collect user input and submit it to a server.",
+    "keywords": ["form", "user input", "submit", "server"]
+  },
+  {
+    "question": "What is the difference between GET and POST methods in HTML forms?",
+    "answer": "GET appends data to the URL and is used for retrieving data, while POST sends data in the request body and is used for submitting data.",
+    "keywords": ["get", "post", "url", "request", "submit", "retrieve"]
+  },
+  {
+    "question": "What are block-level and inline elements?",
+    "answer": "Block-level elements take up the full width (e.g., <div>, <p>), while inline elements take up only the space they need (e.g., <a>, <span>).",
+    "keywords": ["block", "inline", "div", "span", "width"]
+  },
+  {
+    "question": "What is the purpose of the <head> tag?",
+    "answer": "The <head> tag contains meta-information about the document, such as links to stylesheets, scripts, and metadata.",
+    "keywords": ["head", "meta", "stylesheets", "scripts", "metadata"]
+  },
+  {
+    "question": "What is the difference between <ul> and <ol>?",
+    "answer": "<ul> defines an unordered (bulleted) list, while <ol> defines an ordered (numbered) list.",
+    "keywords": ["ul", "ol", "unordered", "ordered", "list", "bulleted", "numbered"]
+  },
+  {
+    "question": "What is a self-closing tag in HTML?",
+    "answer": "A self-closing tag is a tag that does not require a closing pair, such as <img />, <br />, or <input />.",
+    "keywords": ["self-closing", "img", "br", "input", "tag"]
+  },
+  {
+    "question": "What is the purpose of the <iframe> tag?",
+    "answer": "The <iframe> tag is used to embed another HTML page within the current page.",
+    "keywords": ["iframe", "embed", "html page"]
+  },
+  {
+    "question": "How is a hyperlink created in HTML?",
+    "answer": "A hyperlink is created using the <a> tag with the `href` attribute to specify the link destination.",
+    "keywords": ["hyperlink", "a", "href", "link"]
+  },
+  {
+    "question": "What is the role of the <label> element in a form?",
+    "answer": "The <label> tag defines a label for an input element and improves accessibility and usability.",
+    "keywords": ["label", "input", "accessibility", "form"]
+  },
+  {
+    "question": "What is the use of the <fieldset> and <legend> tags?",
+    "answer": "<fieldset> groups related elements in a form, and <legend> provides a caption for that group.",
+    "keywords": ["fieldset", "legend", "form", "group", "caption"]
+  },
+  {
+    "question": "What is the purpose of ARIA attributes in HTML?",
+    "answer": "ARIA (Accessible Rich Internet Applications) attributes improve accessibility by adding roles and states to elements for assistive technologies.",
+    "keywords": ["aria", "accessibility", "assistive", "roles", "states"]
+  }
+]
+
+ ,
+        "CSS": [
+  {
+    "question": "What does CSS stand for?",
+    "answer": "CSS stands for Cascading Style Sheets. It is used to style and layout HTML elements on a web page.",
+    "keywords": ["css", "cascading", "style", "sheets", "layout", "html"]
+  },
+  {
+    "question": "What is the difference between classes and IDs in CSS?",
+    "answer": "IDs are unique and used once per page, prefixed with `#`, while classes can be reused multiple times and are prefixed with `.`.",
+    "keywords": ["id", "unique", "class", "reused", "selector"]
+  },
+  {
+    "question": "What is the box model in CSS?",
+    "answer": "The box model consists of margins, borders, padding, and the actual content. It defines how elements are spaced and sized.",
+    "keywords": ["box", "model", "margin", "border", "padding", "content"]
+  },
+  {
+    "question": "What is specificity in CSS?",
+    "answer": "Specificity determines which CSS rule is applied when multiple rules target the same element. It is based on the types of selectors used.",
+    "keywords": ["specificity", "rule", "selectors", "priority"]
+  },
+  {
+    "question": "What are pseudo-classes in CSS?",
+    "answer": "Pseudo-classes define the special state of an element, such as `:hover`, `:first-child`, or `:nth-child(n)`.",
+    "keywords": ["pseudo-class", "hover", "state", "first-child"]
+  },
+  {
+    "question": "What is the difference between relative, absolute, fixed, and sticky positioning?",
+    "answer": "`relative` positions based on normal flow, `absolute` to the nearest positioned ancestor, `fixed` to the viewport, and `sticky` toggles between relative and fixed depending on scroll.",
+    "keywords": ["position", "relative", "absolute", "fixed", "sticky", "viewport"]
+  },
+  {
+    "question": "What is a media query in CSS?",
+    "answer": "Media queries are used to apply styles based on the device's characteristics, like screen width or resolution.",
+    "keywords": ["media", "query", "screen", "width", "responsive"]
+  },
+  {
+    "question": "What is the difference between inline, inline-block, and block elements?",
+    "answer": "`inline` doesn’t start a new line and only takes up as much width as needed, `block` starts on a new line, and `inline-block` behaves like inline but respects box model.",
+    "keywords": ["inline", "block", "inline-block", "layout", "new line"]
+  },
+  {
+    "question": "What are the different types of position values in CSS?",
+    "answer": "The position values are `static`, `relative`, `absolute`, `fixed`, and `sticky`.",
+    "keywords": ["position", "static", "relative", "absolute", "fixed", "sticky"]
+  },
+  {
+    "question": "What is the z-index in CSS?",
+    "answer": "The `z-index` property determines the stack order of elements on the z-axis (front to back).",
+    "keywords": ["z-index", "stack", "layer", "order", "z-axis"]
+  },
+  {
+    "question": "What is the difference between em, rem, %, and px in CSS?",
+    "answer": "`px` is fixed, `em` is relative to the parent, `rem` is relative to the root, and `%` is relative to the containing element.",
+    "keywords": ["em", "rem", "px", "percent", "relative", "unit"]
+  },
+  {
+    "question": "What is the purpose of the `!important` declaration in CSS?",
+    "answer": "`!important` overrides all other declarations, regardless of specificity or order.",
+    "keywords": ["important", "override", "declaration", "priority"]
+  },
+  {
+    "question": "What is a CSS preprocessor?",
+    "answer": "A CSS preprocessor like SASS or LESS adds programming features like variables, functions, and nesting to CSS.",
+    "keywords": ["sass", "less", "preprocessor", "variables", "nesting"]
+  },
+  {
+    "question": "What is flexbox?",
+    "answer": "Flexbox is a layout model that allows easy alignment and distribution of space among items in a container.",
+    "keywords": ["flexbox", "layout", "alignment", "container"]
+  },
+  {
+    "question": "What is CSS Grid?",
+    "answer": "CSS Grid is a two-dimensional layout system for web pages, allowing rows and columns to align content easily.",
+    "keywords": ["grid", "layout", "rows", "columns", "two-dimensional"]
+  },
+  {
+    "question": "What is a pseudo-element in CSS?",
+    "answer": "Pseudo-elements allow styling of specific parts of elements using selectors like `::before` and `::after`.",
+    "keywords": ["pseudo-element", "before", "after", "selector"]
+  },
+  {
+    "question": "What is a keyframe animation in CSS?",
+    "answer": "Keyframe animations define intermediate steps in a CSS animation using `@keyframes`.",
+    "keywords": ["keyframe", "animation", "css", "steps"]
+  },
+  {
+    "question": "How do you apply styles to multiple elements in CSS?",
+    "answer": "You can apply the same style to multiple selectors by separating them with commas.",
+    "keywords": ["multiple", "selectors", "comma", "apply"]
+  },
+  {
+    "question": "What is the difference between visibility: hidden and display: none?",
+    "answer": "`visibility: hidden` hides the element but it still takes up space. `display: none` removes it from the layout completely.",
+    "keywords": ["visibility", "display", "hidden", "none", "layout"]
+  },
+  {
+    "question": "What are transitions in CSS?",
+    "answer": "Transitions allow you to change property values smoothly over a given duration.",
+    "keywords": ["transition", "duration", "smooth", "property"]
+  }
+]
+
+      ,
+     "MySQL": [
+  {
+    "question": "What is MySQL?",
+    "answer": "MySQL is an open-source relational database management system based on Structured Query Language (SQL).",
+    "keywords": ["mysql", "open-source", "relational", "database", "sql"]
+  },
+  {
+    "question": "What is the difference between SQL and MySQL?",
+    "answer": "SQL is the language used to interact with relational databases, while MySQL is a database management system that uses SQL.",
+    "keywords": ["sql", "mysql", "language", "database", "system"]
+  },
+  {
+    "question": "What are primary keys?",
+    "answer": "Primary keys uniquely identify each record in a table and cannot contain NULL values.",
+    "keywords": ["primary key", "unique", "record", "null"]
+  },
+  {
+    "question": "What is a foreign key?",
+    "answer": "A foreign key is a field in a table that links to the primary key in another table to establish a relationship between the two.",
+    "keywords": ["foreign key", "relationship", "link", "primary key"]
+  },
+  {
+    "question": "What is normalization?",
+    "answer": "Normalization is the process of organizing data to reduce redundancy and improve data integrity.",
+    "keywords": ["normalization", "redundancy", "integrity", "organizing"]
+  },
+  {
+    "question": "What is a JOIN in MySQL?",
+    "answer": "JOIN is used to combine rows from two or more tables based on a related column.",
+    "keywords": ["join", "combine", "tables", "related column"]
+  },
+  {
+    "question": "What are the types of JOINs?",
+    "answer": "Types of JOINs include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.",
+    "keywords": ["inner join", "left join", "right join", "outer join"]
+  },
+  {
+    "question": "What is the difference between WHERE and HAVING?",
+    "answer": "`WHERE` filters rows before grouping, while `HAVING` filters groups after the `GROUP BY` clause.",
+    "keywords": ["where", "having", "group by", "filter"]
+  },
+  {
+    "question": "What is an index in MySQL?",
+    "answer": "An index is a performance optimization feature that allows faster retrieval of records from a table.",
+    "keywords": ["index", "performance", "optimize", "fast"]
+  },
+  {
+    "question": "What is the difference between CHAR and VARCHAR?",
+    "answer": "`CHAR` is fixed-length, while `VARCHAR` is variable-length and saves space for shorter data.",
+    "keywords": ["char", "varchar", "fixed", "variable", "length"]
+  },
+  {
+    "question": "What is ACID in MySQL?",
+    "answer": "ACID stands for Atomicity, Consistency, Isolation, and Durability, which are the properties of reliable database transactions.",
+    "keywords": ["acid", "atomicity", "consistency", "isolation", "durability"]
+  },
+  {
+    "question": "How do you prevent SQL injection?",
+    "answer": "Use prepared statements, parameterized queries, and ORM libraries to prevent SQL injection attacks.",
+    "keywords": ["sql injection", "prepared", "parameterized", "security"]
+  },
+  {
+    "question": "What does the AUTO_INCREMENT attribute do?",
+    "answer": "AUTO_INCREMENT automatically increases the value of a column, typically used for primary keys.",
+    "keywords": ["auto_increment", "primary key", "increment", "column"]
+  },
+  {
+    "question": "What is a stored procedure?",
+    "answer": "A stored procedure is a set of SQL statements that can be executed on demand, stored in the database.",
+    "keywords": ["stored", "procedure", "sql", "execute"]
+  },
+  {
+    "question": "What is the purpose of GROUP BY?",
+    "answer": "`GROUP BY` groups rows with the same values into summary rows, often used with aggregate functions like COUNT or SUM.",
+    "keywords": ["group by", "aggregate", "count", "sum"]
+  },
+  {
+    "question": "What are constraints in MySQL?",
+    "answer": "Constraints are rules applied to columns to enforce data integrity, such as NOT NULL, UNIQUE, PRIMARY KEY, and FOREIGN KEY.",
+    "keywords": ["constraints", "not null", "unique", "primary", "foreign"]
+  },
+  {
+    "question": "What is a subquery?",
+    "answer": "A subquery is a query nested inside another query, used to return data to be used in the main query.",
+    "keywords": ["subquery", "nested", "query", "inner query"]
+  },
+  {
+    "question": "How do you back up a MySQL database?",
+    "answer": "You can use the `mysqldump` utility or tools like phpMyAdmin to back up MySQL databases.",
+    "keywords": ["backup", "mysqldump", "phpmyadmin", "export"]
+  },
+  {
+    "question": "What is a view in MySQL?",
+    "answer": "A view is a virtual table based on the result of an SQL query. It does not store data itself.",
+    "keywords": ["view", "virtual", "table", "query"]
+  },
+  {
+    "question": "What is the difference between DELETE and TRUNCATE?",
+    "answer": "`DELETE` removes specific rows and logs each row, while `TRUNCATE` removes all rows quickly without logging individual row deletions.",
+    "keywords": ["delete", "truncate", "remove", "log"]
+  }
+]
+
+      ,
+       "MongoDB": [
+  {
+    "question": "What is MongoDB?",
+    "answer": "MongoDB is a NoSQL, document-oriented database that stores data in JSON-like BSON format.",
+    "keywords": ["mongodb", "nosql", "document-oriented", "bson", "json"]
+  },
+  {
+    "question": "What is a document in MongoDB?",
+    "answer": "A document is a set of key-value pairs stored in BSON format, similar to JSON, and is the basic unit of data in MongoDB.",
+    "keywords": ["document", "bson", "json", "key-value", "unit"]
+  },
+  {
+    "question": "What is a collection in MongoDB?",
+    "answer": "A collection is a group of MongoDB documents, similar to a table in relational databases.",
+    "keywords": ["collection", "group", "documents", "table"]
+  },
+  {
+    "question": "What is the difference between MongoDB and MySQL?",
+    "answer": "MongoDB is schema-less and stores data in documents, while MySQL uses a structured schema and stores data in tables.",
+    "keywords": ["difference", "mysql", "nosql", "schema-less", "table"]
+  },
+  {
+    "question": "What is indexing in MongoDB?",
+    "answer": "Indexing improves query performance by creating a data structure that allows fast data retrieval.",
+    "keywords": ["indexing", "performance", "query", "fast"]
+  },
+  {
+    "question": "What is a primary key in MongoDB?",
+    "answer": "In MongoDB, the `_id` field is the default primary key that uniquely identifies each document.",
+    "keywords": ["primary key", "_id", "unique", "document"]
+  },
+  {
+    "question": "What is a replica set in MongoDB?",
+    "answer": "A replica set is a group of MongoDB servers that maintain the same data set to provide redundancy and high availability.",
+    "keywords": ["replica", "set", "redundancy", "high availability"]
+  },
+  {
+    "question": "What is sharding in MongoDB?",
+    "answer": "Sharding is a method of distributing data across multiple servers to handle large-scale data and improve performance.",
+    "keywords": ["sharding", "distribution", "scaling", "performance"]
+  },
+  {
+    "question": "What is an aggregation in MongoDB?",
+    "answer": "Aggregation is a way of processing data records and returning computed results, similar to SQL's GROUP BY.",
+    "keywords": ["aggregation", "processing", "group by", "result"]
+  },
+  {
+    "question": "What are the different types of relationships in MongoDB?",
+    "answer": "MongoDB supports embedded (denormalized) and referenced (normalized) relationships.",
+    "keywords": ["relationships", "embedded", "referenced", "denormalized", "normalized"]
+  },
+  {
+    "question": "What is the use of the find() method in MongoDB?",
+    "answer": "The `find()` method is used to retrieve documents from a collection that match the query criteria.",
+    "keywords": ["find", "retrieve", "documents", "query"]
+  },
+  {
+    "question": "How does MongoDB handle transactions?",
+    "answer": "MongoDB supports multi-document transactions, ensuring atomicity across multiple documents and collections.",
+    "keywords": ["transaction", "multi-document", "atomicity"]
+  },
+  {
+    "question": "What is the purpose of the $match operator in aggregation?",
+    "answer": "$match filters documents that match a specified condition, similar to the WHERE clause in SQL.",
+    "keywords": ["$match", "filter", "aggregation", "where"]
+  },
+  {
+    "question": "What is the difference between find() and aggregate()?",
+    "answer": "`find()` retrieves data with simple queries, while `aggregate()` performs more complex operations like grouping, filtering, and projecting.",
+    "keywords": ["find", "aggregate", "difference", "query", "grouping"]
+  },
+  {
+    "question": "What are capped collections?",
+    "answer": "Capped collections are fixed-size collections that automatically overwrite the oldest documents when the size limit is reached.",
+    "keywords": ["capped", "fixed-size", "overwrite", "oldest"]
+  },
+  {
+    "question": "How do you update a document in MongoDB?",
+    "answer": "You can update a document using `updateOne()`, `updateMany()`, or `replaceOne()` methods with update operators like `$set`, `$inc`, etc.",
+    "keywords": ["update", "updateone", "updatemany", "$set", "document"]
+  },
+  {
+    "question": "What is BSON in MongoDB?",
+    "answer": "BSON stands for Binary JSON, a binary-encoded serialization of JSON-like documents that MongoDB uses to store data.",
+    "keywords": ["bson", "binary", "json", "serialization"]
+  },
+  {
+    "question": "What is MongoDB Atlas?",
+    "answer": "MongoDB Atlas is a fully managed cloud database service for MongoDB, offering automation, scalability, and security.",
+    "keywords": ["atlas", "cloud", "managed", "mongodb"]
+  },
+  {
+    "question": "What is a schema in MongoDB?",
+    "answer": "MongoDB is schema-less, but you can enforce a schema using schema validation rules for specific collections.",
+    "keywords": ["schema", "validation", "schema-less", "rules"]
+  },
+  {
+    "question": "What are some common MongoDB operators?",
+    "answer": "Common operators include `$eq`, `$gt`, `$lt`, `$in`, `$and`, `$or`, `$set`, `$push`, and more.",
+    "keywords": ["$eq", "$gt", "$lt", "$in", "$and", "$or", "$set", "$push"]
+  }
+]
+
+      ,
+        "Soft Skills": [
+  {
+    "question": "What are soft skills?",
+    "answer": "Soft skills are personal attributes that enable someone to interact effectively and harmoniously with others, such as communication, teamwork, and problem-solving.",
+    "keywords": ["communication", "teamwork", "problem-solving", "interpersonal", "attributes"]
+  },
+  {
+    "question": "Why are soft skills important in the workplace?",
+    "answer": "Soft skills help individuals collaborate, adapt, and thrive in team environments, enhancing productivity and workplace culture.",
+    "keywords": ["collaboration", "adapt", "team", "productivity", "culture"]
+  },
+  {
+    "question": "How do you handle conflict in a team?",
+    "answer": "By staying calm, listening actively to all parties, understanding different perspectives, and working toward a solution that satisfies everyone.",
+    "keywords": ["conflict", "listening", "perspective", "solution", "calm"]
+  },
+  {
+    "question": "Describe a time when you showed leadership.",
+    "answer": "Answers will vary, but should show initiative, responsibility, decision-making, and the ability to motivate others.",
+    "keywords": ["leadership", "initiative", "responsibility", "decision-making", "motivation"]
+  },
+  {
+    "question": "What is emotional intelligence?",
+    "answer": "Emotional intelligence is the ability to understand and manage your own emotions and the emotions of others.",
+    "keywords": ["emotions", "empathy", "self-awareness", "manage", "understand"]
+  },
+  {
+    "question": "How do you prioritize your tasks?",
+    "answer": "By evaluating urgency and importance, setting deadlines, and breaking larger tasks into smaller, manageable steps.",
+    "keywords": ["priority", "urgency", "deadlines", "manage", "tasks"]
+  },
+  {
+    "question": "What is your approach to giving and receiving feedback?",
+    "answer": "Feedback should be constructive, respectful, and specific. Receiving feedback requires openness and a willingness to improve.",
+    "keywords": ["feedback", "constructive", "respectful", "improve", "open"]
+  },
+  {
+    "question": "How do you stay motivated at work?",
+    "answer": "By setting goals, celebrating small wins, staying connected to purpose, and seeking challenges that promote growth.",
+    "keywords": ["motivation", "goals", "growth", "purpose", "wins"]
+  },
+  {
+    "question": "How do you adapt to change?",
+    "answer": "By being open-minded, proactive in learning new things, and maintaining a positive attitude during transitions.",
+    "keywords": ["change", "adapt", "open-minded", "transition", "learning"]
+  },
+  {
+    "question": "Describe a time when you had to work with someone difficult.",
+    "answer": "Answers should highlight empathy, communication, and a focus on common goals despite personal differences.",
+    "keywords": ["difficult", "empathy", "communication", "goals", "teamwork"]
+  },
+  {
+    "question": "What is time management and why is it important?",
+    "answer": "Time management is organizing and planning your time between tasks efficiently. It helps in meeting deadlines and reducing stress.",
+    "keywords": ["time", "deadlines", "organization", "stress", "plan"]
+  },
+  {
+    "question": "How do you deal with failure?",
+    "answer": "By analyzing what went wrong, learning from mistakes, and using the experience to improve future efforts.",
+    "keywords": ["failure", "learning", "improve", "mistakes", "resilience"]
+  },
+  {
+    "question": "What does teamwork mean to you?",
+    "answer": "Teamwork means working collaboratively toward a common goal, valuing each member's contribution, and supporting each other.",
+    "keywords": ["teamwork", "goal", "support", "collaboration", "contribution"]
+  },
+  {
+    "question": "How do you communicate effectively?",
+    "answer": "By being clear, listening actively, asking questions for clarity, and adjusting your communication style to your audience.",
+    "keywords": ["communication", "clarity", "listening", "questions", "style"]
+  },
+  {
+    "question": "Describe a situation where you solved a problem creatively.",
+    "answer": "Answers should include examples of innovative thinking, resourcefulness, or applying knowledge in a new way.",
+    "keywords": ["creative", "problem", "solution", "innovation", "resourceful"]
+  },
+  {
+    "question": "What role does empathy play in a professional setting?",
+    "answer": "Empathy helps build trust, improves collaboration, and allows for better conflict resolution and customer service.",
+    "keywords": ["empathy", "trust", "conflict", "collaboration", "understanding"]
+  },
+  {
+    "question": "How do you handle stress?",
+    "answer": "By staying organized, practicing self-care, taking breaks, and using problem-solving techniques to address stressors.",
+    "keywords": ["stress", "organization", "self-care", "break", "problem-solving"]
+  },
+  {
+    "question": "What is the importance of a positive attitude at work?",
+    "answer": "A positive attitude improves morale, increases productivity, and fosters a healthier work environment.",
+    "keywords": ["positive", "attitude", "morale", "productivity", "environment"]
+  },
+  {
+    "question": "How do you ensure continuous personal development?",
+    "answer": "By setting learning goals, seeking feedback, attending workshops, reading, and staying curious.",
+    "keywords": ["development", "learning", "goals", "feedback", "growth"]
+  },
+  {
+    "question": "What is active listening and why is it important?",
+    "answer": "Active listening involves fully concentrating, understanding, and responding thoughtfully. It builds trust and improves communication.",
+    "keywords": ["active listening", "trust", "understanding", "respond", "communication"]
+  }
+]
+
+      ,
+        "Python": [
+  {
+    "question": "What is Python and what are its key features?",
+    "answer": "Python is a high-level, interpreted programming language known for its simplicity and readability. Key features include dynamic typing, automatic memory management, and a vast standard library.",
+    "keywords": ["interpreted", "readable", "dynamic typing", "memory management", "standard library"]
+  },
+  {
+    "question": "What is the difference between a list and a tuple?",
+    "answer": "Lists are mutable, meaning their elements can be changed. Tuples are immutable, meaning once created, their elements cannot be modified.",
+    "keywords": ["list", "tuple", "mutable", "immutable"]
+  },
+  {
+    "question": "What are Python decorators?",
+    "answer": "Decorators are functions that modify the behavior of other functions or methods. They are often used for logging, access control, and instrumentation.",
+    "keywords": ["decorator", "modify", "functions", "logging", "access control"]
+  },
+  {
+    "question": "What is the use of the 'self' keyword in Python?",
+    "answer": "'self' represents the instance of a class. It's used to access variables and methods associated with the object.",
+    "keywords": ["self", "instance", "class", "methods"]
+  },
+  {
+    "question": "What is the difference between 'is' and '==' in Python?",
+    "answer": "'==' checks for value equality, whereas 'is' checks whether two variables refer to the same object in memory.",
+    "keywords": ["is", "==", "equality", "memory", "identity"]
+  },
+  {
+    "question": "What are Python's data types?",
+    "answer": "Common data types include int, float, bool, str, list, tuple, set, and dict.",
+    "keywords": ["int", "float", "bool", "str", "list", "tuple", "set", "dict"]
+  },
+  {
+    "question": "What is list comprehension?",
+    "answer": "List comprehension is a concise way to create lists using a single line of code with an expression followed by a for clause.",
+    "keywords": ["list comprehension", "concise", "for", "expression"]
+  },
+  {
+    "question": "What is a Python generator?",
+    "answer": "Generators are iterators that yield items one at a time using the `yield` keyword, which is useful for memory-efficient iteration.",
+    "keywords": ["generator", "yield", "iterator", "memory"]
+  },
+  {
+    "question": "What is the purpose of the 'with' statement in Python?",
+    "answer": "The 'with' statement simplifies exception handling by automatically managing resources like file streams.",
+    "keywords": ["with", "context manager", "resources", "file", "exception"]
+  },
+  {
+    "question": "What is PEP 8?",
+    "answer": "PEP 8 is the Python Enhancement Proposal that provides guidelines and best practices on how to write clean and readable Python code.",
+    "keywords": ["PEP 8", "guidelines", "best practices", "style"]
+  },
+  {
+    "question": "How is memory managed in Python?",
+    "answer": "Python uses automatic memory management, including reference counting and garbage collection.",
+    "keywords": ["memory", "automatic", "garbage collection", "reference counting"]
+  },
+  {
+    "question": "What is the difference between deep copy and shallow copy?",
+    "answer": "A shallow copy copies references to objects, while a deep copy creates a completely independent copy of all objects.",
+    "keywords": ["deep copy", "shallow copy", "reference", "independent"]
+  },
+  {
+    "question": "What are lambda functions in Python?",
+    "answer": "Lambda functions are anonymous functions defined with the `lambda` keyword. They can have any number of arguments but only one expression.",
+    "keywords": ["lambda", "anonymous", "function", "expression"]
+  },
+  {
+    "question": "What is the purpose of the `__init__` method?",
+    "answer": "`__init__` is a constructor method in Python classes. It's automatically called when a new instance of the class is created.",
+    "keywords": ["__init__", "constructor", "class", "instance"]
+  },
+  {
+    "question": "What is the difference between 'append()' and 'extend()' methods in a list?",
+    "answer": "`append()` adds a single element to the end of a list, while `extend()` adds all elements of an iterable to the list.",
+    "keywords": ["append", "extend", "list", "element", "iterable"]
+  },
+  {
+    "question": "What are *args and **kwargs?",
+    "answer": "`*args` allows variable number of non-keyword arguments, and `**kwargs` allows variable number of keyword arguments.",
+    "keywords": ["*args", "**kwargs", "arguments", "function"]
+  },
+  {
+    "question": "What is exception handling in Python?",
+    "answer": "Exception handling is done using try-except blocks to catch and handle errors gracefully.",
+    "keywords": ["try", "except", "exception", "handling"]
+  },
+  {
+    "question": "What is the difference between a module and a package in Python?",
+    "answer": "A module is a single Python file, while a package is a directory that contains multiple modules and an `__init__.py` file.",
+    "keywords": ["module", "package", "__init__.py", "directory"]
+  },
+  {
+    "question": "What are Python's built-in data structures?",
+    "answer": "Python's built-in data structures include lists, tuples, sets, and dictionaries.",
+    "keywords": ["list", "tuple", "set", "dictionary", "built-in"]
+  },
+  {
+    "question": "What is the use of the 'pass' statement in Python?",
+    "answer": "`pass` is a placeholder statement used when a statement is required but you don't want any code to run.",
+    "keywords": ["pass", "placeholder", "syntax", "empty"]
+  }
+]
+}}

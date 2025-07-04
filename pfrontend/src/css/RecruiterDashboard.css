@@ -1,0 +1,59 @@
+.recruiter-dashboard {
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header h2 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header .highlight {
+  color: #007bff;
+}
+
+.dashboard-header .email {
+  font-size: 14px;
+  color: #666;
+}
+
+.welcome-card {
+  background-color: #e9f5ff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.1);
+  margin-top: 1.5rem;
+}
+
+.welcome-card h4 {
+  margin-bottom: 1rem;
+  color: #0056b3;
+}
+
+.welcome-card ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.welcome-card ul li {
+  padding: 0.5rem 0;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+}
+
+.welcome-card ul li::before {
+  content: "✅";
+  position: absolute;
+  left: -1.2rem;
+  color: #28a745;
+}

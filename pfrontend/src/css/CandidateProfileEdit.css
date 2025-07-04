@@ -1,0 +1,136 @@
+/* Background Animation (same as CandidateProfile) */
+.profile-edit-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #00c9ff, #92fe9d);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  
+  color: #fff;
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particles Layer */
+.particles-background {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+}
+
+/* Form Container with light background */
+.profile-edit-form-container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.profile-edit-form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Success message */
+.success-msg {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Form layout */
+.profile-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-group {
+  flex: 1 1 100%;
+}
+
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+/* Form labels */
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs, selects and textareas */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #2575fc44;
+}
+
+/* Textareas */
+.form-group textarea {
+  min-height: 60px;
+}
+
+/* Submit button */
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #2575fc;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #195cc7;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

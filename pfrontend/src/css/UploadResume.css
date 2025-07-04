@@ -1,0 +1,44 @@
+.upload-resume-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.resume-form input {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.resume-form .btn {
+  font-weight: 600;
+  padding: 10px;
+}
+
+.skills-section h6 {
+  margin-bottom: 10px;
+}
+
+.skill-tags .badge {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.extracted-text-section h6 {
+  margin-top: 30px;
+}
+
+.resume-text {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 300px;
+  overflow-y: auto;
+}
