@@ -29,7 +29,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: 'https://hireiq-frontend-v9nq.onrender.com',
+  origin: 'https://hireiq-frontend-dar5.onrender.com',
   credentials: true
 }));
 
