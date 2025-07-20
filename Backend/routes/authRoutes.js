@@ -5,7 +5,7 @@ import {
   register, login, logout, sendResetOtp,
   verifyOtp, resetPassword
 } from '../controllers/authController.js';
-
+import User from '../models/User.js';
 const router = express.Router();
 
 router.post('/register', register);
@@ -39,7 +39,7 @@ router.get(
     const role = req.user.role || 'candidate';
     console.log('Redirecting to dashboard of role:', role);
 
-    res.redirect(`http://localhost:3001/dashboard-${role}`);
+    res.redirect(`https://hireiq-frontend-v9nq.onrender.com/dashboard-${role}`);
   }
 );
 
