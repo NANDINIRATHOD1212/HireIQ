@@ -1,5 +1,6 @@
 import express from 'express';
 import session from 'express-session';
+import SequelizeStoreImport from 'connect-session-sequelize';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import passport from 'passport';
@@ -28,25 +29,33 @@ import candidateAssessementRoutes from './routes/candidateAssessmentRoutes.js';
 const app = express();
 
 
+const SequelizeStore = SequelizeStoreImport(session.Store);
+const store = new SequelizeStore({ db: sequelize });
+
+
 app.use(cors({
   origin: 'https://hireiq-frontend-dar5.onrender.com',
   credentials: true
 }));
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 app.use(session({
-  secret: 'yourSecretKey',
+  secret: 'hireiqsecretkey',
   resave: false,
   saveUninitialized: false,
+  store: store,
   cookie: {
-    secure: false,
+    secure: true,           
     httpOnly: true,
-    maxAge: 1000 * 60 * 60
+    sameSite: 'None',        
+    maxAge: 1000 * 60 * 60   
   }
 }));
+
+store.sync(); 
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -63,14 +72,11 @@ app.use('/', candidateAssessementRoutes);
 app.use('/uploads', express.static('uploads'));
 
 
-
 User.hasOne(Resume, { foreignKey: 'userId', as: 'resume' });
 Resume.belongsTo(User, { foreignKey: 'userId', as: 'resume' });
 
-
 User.hasMany(Job, { foreignKey: 'recruiterId', as: 'jobs' });
 Job.belongsTo(User, { foreignKey: 'recruiterId', as: 'recruiter' });
-
 
 User.hasMany(JobApplication, { foreignKey: 'candidateId', as: 'applications' });
 JobApplication.belongsTo(User, { foreignKey: 'candidateId', as: 'candidate' });
@@ -94,15 +100,12 @@ Interview.belongsTo(User, { foreignKey: 'candidateId', as: 'candidate' });
 User.hasMany(Interview, { foreignKey: 'recruiterId', as: 'recruiterInterviews' });
 Interview.belongsTo(User, { foreignKey: 'recruiterId', as: 'recruiter' });
 
-
-
-
 const startApp = async () => {
   try {
     await connectDB();
     await sequelize.sync({ alter: true });
     console.log(' All models synced!');
-    app.listen(3000, () => console.log(' Server running at http://localhost:3000'));
+    app.listen(3000, () => console.log('Server running at http://localhost:3000'));
   } catch (err) {
     console.error(' Error starting server:', err);
   }
