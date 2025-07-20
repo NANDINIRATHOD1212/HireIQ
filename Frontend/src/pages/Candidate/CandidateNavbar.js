@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logout from '../Recruiter/LogOut';
-
+import BASE_URL from "../../api.js";
 const CandidateNavbar = () => {
   return (
     <div className="col-md-3 sidebar bg-primary vh-100 border-end pt-4">

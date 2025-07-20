@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const ViewScheduledInterviews = () => {
   const [interviews, setInterviews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ const ViewScheduledInterviews = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get('http://localhost:3000/recruiter/interviews', {
+        const response = await axios.get(`${BASE_URL}/recruiter/interviews`, {
           withCredentials: true,  
         });
         if (response.data.success) {

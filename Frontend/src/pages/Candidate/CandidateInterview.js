@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const CandidateInterviews = () => {
   const [interviews, setInterviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/candidate/interviews', { withCredentials: true })
+    axios.get(`${BASE_URL}/candidate/interviews`, { withCredentials: true })
       .then(res => {
         if (res.data.success) {
           setInterviews(res.data.interviews);

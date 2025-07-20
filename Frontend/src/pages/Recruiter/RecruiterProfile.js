@@ -3,12 +3,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../css/RecruiterProfile.css'; 
 import NavBar from '../NavBar';
-
+import BASE_URL from "../../api.js";
 const RecruiterProfile = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/recruiter/profile', { withCredentials: true })
+    axios.get(`${BASE_URL}/recruiter/profile`, { withCredentials: true })
       .then((res) => setProfile(res.data))
       .catch((err) => console.error(err));
   }, []);

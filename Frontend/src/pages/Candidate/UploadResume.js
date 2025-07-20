@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../css/UploadResume.css'
+import BASE_URL from "../../api.js";
 const UploadResume = () => {
   const [file, setFile] = useState(null);
   const [resumePath, setResumePath] = useState('');
@@ -19,7 +20,7 @@ const UploadResume = () => {
     formData.append('resume', file);
 
     try {
-      const res = await axios.post('http://localhost:3000/upload', formData, {
+      const res = await axios.post(`${BASE_URL}/upload`, formData, {
         withCredentials: true,
         headers: { 'Content-Type': 'multipart/form-data' }
       });
@@ -33,7 +34,7 @@ const UploadResume = () => {
   };
 
   const handleDownload = () => {
-    window.open('http://localhost:3000/download-resume', '_blank');
+    window.open(`${BASE_URL}/download-resume`, '_blank');
   };
 
   return (

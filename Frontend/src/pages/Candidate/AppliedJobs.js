@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const AppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +9,7 @@ const AppliedJobs = () => {
   useEffect(() => {
     const fetchAppliedJobs = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/candidate/applied-jobs', {
+        const res = await axios.get(`${BASE_URL}/candidate/applied-jobs`, {
           withCredentials: true,
         });
 

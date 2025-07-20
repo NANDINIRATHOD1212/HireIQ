@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const JobManagement = () => {
   const [jobs, setJobs] = useState([]);
   const [editingJobId, setEditingJobId] = useState(null);
@@ -13,7 +13,7 @@ const JobManagement = () => {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/admin/jobs',{withCredentials:true});
+      const res = await axios.get(`${BASE_URL}/admin/jobs`,{withCredentials:true});
       setJobs(res.data);
     } catch (err) {
       alert('Failed to fetch jobs');
@@ -25,7 +25,7 @@ const JobManagement = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this job?')) return;
     try {
-      await axios.delete(`http://localhost:3000/admin/jobs/${id}`,{withCredentials:true});
+      await axios.delete(`${BASE_URL}/admin/jobs/${id}`,{withCredentials:true});
       setJobs(jobs.filter(job => job.id !== id));
     } catch (err) {
       alert('Failed to delete job');
@@ -55,7 +55,7 @@ const JobManagement = () => {
         ...editData,
         postedDate: new Date(editData.postedDate).toISOString()
       };
-      await axios.put(`http://localhost:3000/admin/jobs/${editingJobId}`, updatedData,{withCredentials:true});
+      await axios.put(`${BASE_URL}/admin/jobs/${editingJobId}`, updatedData,{withCredentials:true});
       setEditingJobId(null);
       setEditData({});
       fetchJobs();

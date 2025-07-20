@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import BASE_URL from "../../api.js";
 const GenerateFromAI = () => {
   const [skill, setSkill] = useState('');
   const [selectedJobId, setSelectedJobId] = useState('');
@@ -12,7 +12,7 @@ const GenerateFromAI = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/recruiter/jobs', { withCredentials: true })
+      .get(`${BASE_URL}/recruiter/jobs`, { withCredentials: true })
       .then((res) => {
         setJobs(res.data.jobs || []);
       })
@@ -33,7 +33,7 @@ const GenerateFromAI = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/recruiter/generate-ai',
+        `${BASE_URL}/recruiter/generate-ai`,
         { skill, jobId: selectedJobId },
         { withCredentials: true }
       );
@@ -69,7 +69,7 @@ const GenerateFromAI = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/recruiter/questions/save-preview',
+        `${BASE_URL}/recruiter/questions/save-preview`,
         { jobId: selectedJobId },
         { withCredentials: true }
       );

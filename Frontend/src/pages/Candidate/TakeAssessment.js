@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../css/TakeAssessment.css';
-
+import BASE_URL from "../../api.js";
 const TakeAssessment = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const TakeAssessment = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/candidate/assessment/${id}`, { withCredentials: true })
+      .get(`${BASE_URL}/candidate/assessment/${id}`, { withCredentials: true })
       .then((res) => {
         if (res.data.alreadyTaken) {
           toast.info('You have already taken this assessment.');
@@ -42,7 +42,7 @@ const TakeAssessment = () => {
   const handleSubmit = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/candidate/assessment/${id}`,
+        `${BASE_URL}/candidate/assessment/${id}`,
         { answers },
         { withCredentials: true }
       );

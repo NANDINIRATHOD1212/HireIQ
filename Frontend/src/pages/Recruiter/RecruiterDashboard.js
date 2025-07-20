@@ -3,7 +3,7 @@ import NavBar from "../NavBar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../css/RecruiterDashboard.css";
-
+import BASE_URL from "../../api.js";
 function RecruiterDashboard() {
   const user = useSelector((state) => state.auth.user);
 

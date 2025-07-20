@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 function Logout() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/auth/logout', { withCredentials: true });
+      await axios.post(`${BASE_URL}/auth/logout`, { withCredentials: true });
       localStorage.removeItem('user');
       navigate('/login');
     } catch (err) {

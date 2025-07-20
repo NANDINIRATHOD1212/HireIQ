@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../css/ViewCandidates.css';
-
+import BASE_URL from "../../api.js";
 const ViewCandidates = () => {
   const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/recruiter/candidates', { withCredentials: true })
+      .get(`${BASE_URL}/recruiter/candidates`, { withCredentials: true })
       .then((res) => {
         if (res.data.success) {
           setCandidates(res.data.candidates);
@@ -41,7 +41,7 @@ const ViewCandidates = () => {
                   <td>
                     {candidate.resume?.filePath ? (
                       <a
-                        href={`http://localhost:3000/${candidate.resume.filePath}`}
+                        href={`${BASE_URL}/${candidate.resume.filePath}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-sm btn-outline-success"

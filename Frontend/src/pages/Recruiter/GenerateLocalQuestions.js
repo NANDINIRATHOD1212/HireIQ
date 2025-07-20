@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 function GenerateLocalQuestions() {
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [title, setTitle] = useState('');
@@ -11,7 +11,7 @@ function GenerateLocalQuestions() {
   const handleGenerate = async () => {
     try {
       const res = await axios.post(
-        'http://localhost:3000/recruiter/questions/from-local',
+        `${BASE_URL}/recruiter/questions/from-local`,
         { selectedSkills, title },
         { withCredentials: true }
       );
@@ -27,7 +27,7 @@ function GenerateLocalQuestions() {
   const handleSave = async () => {
     try {
       const res = await axios.post(
-        'http://localhost:3000/recruiter/questions/save-preview',
+        `${BASE_URL}/recruiter/questions/save-preview`,
         {},
         { withCredentials: true }
       );

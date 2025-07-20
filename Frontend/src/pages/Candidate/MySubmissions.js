@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../css/MySubmissions.css';
-
+import BASE_URL from "../../api.js";
 const MySubmissions = () => {
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ const MySubmissions = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/candidate/my-submissions', {
+        const res = await axios.get(`${BASE_URL}/candidate/my-submissions`, {
           withCredentials: true,
         });
         setSubmissions(res.data.submissions || []);

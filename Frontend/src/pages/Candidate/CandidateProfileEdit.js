@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Particles from 'react-tsparticles';
-
+import BASE_URL from "../../api.js";
 import '../../css/CandidateProfileEdit.css';  // Import the CSS file
 
 const CandidateProfileEdit = () => {
@@ -25,7 +25,7 @@ const CandidateProfileEdit = () => {
   const [successMsg, setSuccessMsg] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/candidate/profile', { withCredentials: true })
+    axios.get(`${BASE_URL}/candidate/profile`, { withCredentials: true })
       .then(res => {
         if (res.data.success) {
           setFormData(res.data.user);
@@ -44,7 +44,7 @@ const CandidateProfileEdit = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:3000/candidate/profile/update', formData, { withCredentials: true })
+    axios.post(`${BASE_URL}/candidate/profile/update`, formData, { withCredentials: true })
       .then(res => {
         if (res.data.success) {
           setSuccessMsg('Profile updated successfully!');

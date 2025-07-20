@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../css/CandidateDashboard.css';
-
+import BASE_URL from "../../api.js";
 const CandidateDashboard = () => {
   const [latestJobs, setLatestJobs] = useState([]);
   const [user, setUser] = useState({ name: '', email: '' });
@@ -13,8 +13,8 @@ const CandidateDashboard = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const resumeRes = await axios.get('http://localhost:3000/resume', { withCredentials: true });
-        const jobsRes = await axios.get('http://localhost:3000/candidate/latest', { withCredentials: true });
+        const resumeRes = await axios.get(`${BASE_URL}/resume`, { withCredentials: true });
+        const jobsRes = await axios.get(`${BASE_URL}/candidate/latest`, { withCredentials: true });
 
         setUser(resumeRes.data.user || {});
         setLatestJobs(jobsRes.data || []);
@@ -41,7 +41,7 @@ const CandidateDashboard = () => {
   const handleApply = async (jobId) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/candidate/apply/${jobId}`,
+        `${BASE_URL}/candidate/apply/${jobId}`,
         {},
         { withCredentials: true }
       );

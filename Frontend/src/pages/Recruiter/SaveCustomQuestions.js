@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../css/CustomQuestion.css';
-
+import BASE_URL from "../../api.js";
 const SaveCustomQuestions = () => {
   const [title, setTitle] = useState('');
   const [questionsText, setQuestionsText] = useState('');
@@ -11,7 +11,7 @@ const SaveCustomQuestions = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/recruiter/jobs', { withCredentials: true })
+    axios.get(`${BASE_URL}/recruiter/jobs`, { withCredentials: true })
       .then(res => setJobs(res.data.jobs || []))
       .catch(err => console.error('Failed to fetch jobs', err));
   }, []);
@@ -27,7 +27,7 @@ const SaveCustomQuestions = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:3000/recruiter/questions/manual',
+        `${BASE_URL}/recruiter/questions/manual`,
         {
           title,
           questions: questionsText,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../css/AdminDashboard.css';
 import '../../css/Usermanagement.css'
-
+import BASE_URL from "../../api.js";
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/admin/users');
+      const res = await axios.get(`${BASE_URL}/admin/users`);
       setUsers(res.data);
     } catch (err) {
       setError('Failed to load users');
@@ -29,7 +29,7 @@ const UserManagement = () => {
   const handleDelete = async (userId) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await axios.delete(`http://localhost:3000/admin/users/${userId}`);
+        await axios.delete(`${BASE_URL}/admin/users/${userId}`);
         setUsers(users.filter(user => user.id !== userId));
       } catch (err) {
         alert('Failed to delete user');
@@ -53,7 +53,7 @@ const UserManagement = () => {
 
   const saveEdit = async (userId) => {
     try {
-      await axios.put(`http://localhost:3000/admin/users/${userId}`, editFormData);
+      await axios.put(`${BASE_URL}/admin/users/${userId}`, editFormData);
       // Update local users state
       setUsers(users.map(u => (u.id === userId ? { ...u, ...editFormData } : u)));
       cancelEditing();

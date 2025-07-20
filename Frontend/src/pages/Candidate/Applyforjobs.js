@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const ApplyForJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [appliedJobs, setAppliedJobs] = useState({});
@@ -10,13 +10,13 @@ const ApplyForJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        // API changed to get jobs with applied status
-        const res = await axios.get('http://localhost:3000/candidate/jobs-with-status', { withCredentials: true });
+        
+        const res = await axios.get(`${BASE_URL}/candidate/jobs-with-status`, { withCredentials: true });
 
         const jobsData = res.data.jobs || [];
         setJobs(jobsData);
 
-        // Map jobs to appliedJobs state for quick lookup
+       
         const appliedMap = {};
         jobsData.forEach(job => {
           if (job.isApplied) {
@@ -39,7 +39,7 @@ const ApplyForJobs = () => {
   const handleApply = async (jobId) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/candidate/apply/${jobId}`,
+        `${BASE_URL}/candidate/apply/${jobId}`,
         {},
         { withCredentials: true }
       );

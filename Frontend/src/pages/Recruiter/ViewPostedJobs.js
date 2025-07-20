@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../css/ViewPost.css';
-
+import BASE_URL from "../../api.js";
 const ViewPostedJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const ViewPostedJobs = () => {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/recruiter/view-jobs', {
+      const response = await axios.get(`${BASE_URL}/recruiter/view-jobs`, {
         withCredentials: true,
       });
 

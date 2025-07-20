@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import CandidateNavbar from './CandidateNavbar';
-
+import BASE_URL from "../../api.js";
 const CandidateLayout = () => {
   return (
     <div className="container-fluid">

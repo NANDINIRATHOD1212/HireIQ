@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../css/AssessmentList.css';
-
+import BASE_URL from "../../api.js";
 const AssessmentList = () => {
   const [assessments, setAssessments] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/candidate/assessments', { withCredentials: true })
+      .get(`${BASE_URL}/candidate/assessments`, { withCredentials: true })
       .then((res) => {
         setAssessments(res.data.assessments || []);
         if ((res.data.assessments || []).length === 0) {

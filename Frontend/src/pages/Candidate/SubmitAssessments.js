@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const SubmittedAssessments = () => {
   const [submitted, setSubmitted] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:3000/candidate/my-assessments', { withCredentials: true })
+    axios.get(`${BASE_URL}/candidate/my-assessments`, { withCredentials: true })
       .then(res => setSubmitted(res.data.assessments || {}))
       .catch(err => console.error('Error loading submitted assessments:', err));
   }, []);

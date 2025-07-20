@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
 import '../../css/AdminDashboard.css';
-
+import BASE_URL from "../../api.js";
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [stats, setStats] = useState(null);
@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/admin/analytics');
+        const response = await axios.get(`${BASE_URL}/admin/analytics`);
         setStats(response.data);
         setLoading(false);
       } catch (error) {

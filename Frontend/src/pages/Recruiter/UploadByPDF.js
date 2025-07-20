@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const UploadByPDF = () => {
   const [title, setTitle] = useState('');
   const [file, setFile] = useState(null);
@@ -11,7 +11,7 @@ const UploadByPDF = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/recruiter/jobs', { withCredentials: true })
+    axios.get(`${BASE_URL}/recruiter/jobs`, { withCredentials: true })
       .then((res) => setJobs(res.data.jobs || []))
       .catch((err) => console.error('Failed to fetch jobs', err));
   }, []);
@@ -33,7 +33,7 @@ const UploadByPDF = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:3000/recruiter/questions/upload-pdf',
+        `${BASE_URL}/recruiter/questions/upload-pdf`,
         formData,
         {
           withCredentials: true,

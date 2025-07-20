@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../../css/RecruiterProfile.css'; 
 import NavBar from '../NavBar';
 import { useNavigate } from 'react-router-dom';
-
+import BASE_URL from "../../api.js";
 const EditRecruiterProfile = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +18,7 @@ const EditRecruiterProfile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3000/recruiter/profile', { withCredentials: true })
+    axios.get(`${BASE_URL}/recruiter/profile`, { withCredentials: true })
       .then(res => {
         const { name, phone, company, location, bio, linkedin,experience} = res.data;
         setFormData({ name, phone, company, location, bio, linkedin,experience });
@@ -32,7 +32,7 @@ const EditRecruiterProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put('http://localhost:3000/recruiter/profile', formData, { withCredentials: true })
+    axios.put(`${BASE_URL}/recruiter/profile`, formData, { withCredentials: true })
       .then(() => {
         alert("Profile updated successfully");
         navigate('/recruiter/profile');

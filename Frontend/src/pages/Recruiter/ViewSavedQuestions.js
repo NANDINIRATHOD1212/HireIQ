@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const ViewSavedQuestions = () => {
   const [questionSets, setQuestionSets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ const ViewSavedQuestions = () => {
   const fetchQuestionSets = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:3000/recruiter/questions/saved', {
+      const res = await axios.get(`${BASE_URL}/recruiter/questions/saved`, {
         withCredentials: true
       });
 
@@ -61,7 +61,7 @@ const ViewSavedQuestions = () => {
 
     try {
       await axios.post(
-        `http://localhost:3000/recruiter/question-set/edit/${editingId}`,
+        `${BASE_URL}/recruiter/question-set/edit/${editingId}`,
         {
           title: editedTitle,
           questions: editedQuestionsText,
@@ -84,7 +84,7 @@ const ViewSavedQuestions = () => {
     if (window.confirm("Are you sure you want to delete this question set?")) {
       try {
         await axios.post(
-          `http://localhost:3000/recruiter/question-set/delete/${id}`,
+          `${BASE_URL}/recruiter/question-set/delete/${id}`,
           {},
           { withCredentials: true }
         );

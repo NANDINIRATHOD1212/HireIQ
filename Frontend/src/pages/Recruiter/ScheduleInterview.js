@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../../css/ScheduleInterview.css';
-
+import BASE_URL from "../../api.js";
 const ScheduleInterview = () => {
   const { jobId } = useParams();
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const ScheduleInterview = () => {
       return;
     }
 
-    axios.get(`http://localhost:3000/recruiter/applicants/${jobId}`, {
+    axios.get(`${BASE_URL}/recruiter/applicants/${jobId}`, {
       withCredentials: true
     })
       .then(res => {
@@ -51,7 +51,7 @@ const ScheduleInterview = () => {
       return;
     }
     try {
-      const res = await axios.post('http://localhost:3000/recruiter/schedule', {
+      const res = await axios.post(`${BASE_URL}/recruiter/schedule`, {
         ...form,
         jobId,
       }, { withCredentials: true });

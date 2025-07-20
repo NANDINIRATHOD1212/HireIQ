@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../../css/CandidateProfile.css'; // CSS file
-
+import BASE_URL from "../../api.js";
 const CandidateProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3000/candidate/profile', { withCredentials: true })
+    axios.get(`${BASE_URL}/candidate/profile`, { withCredentials: true })
       .then(res => {
         if (res.data.success) {
           setUserData(res.data.user);

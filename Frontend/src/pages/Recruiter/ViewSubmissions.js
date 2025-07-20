@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 function ViewSubmissions() {
   const [assessments, setAssessments] = useState([]);
   const [filteredAssessments, setFilteredAssessments] = useState([]);
@@ -13,7 +13,7 @@ function ViewSubmissions() {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/recruiter/assessment-submissions', {
+        const res = await axios.get(`${BASE_URL}/recruiter/assessment-submissions` ,{
           withCredentials: true,
         });
 
@@ -55,7 +55,7 @@ function ViewSubmissions() {
   const updateStatusInDB = async (resultId, status) => {
     try {
       await axios.post(
-        'http://localhost:3000/recruiter/update-status',
+      `${BASE_URL}/recruiter/update-status`,
         { resultId, status },
         { withCredentials: true }
       );

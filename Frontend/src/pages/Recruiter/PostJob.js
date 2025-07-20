@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../css/PostJob.css';
 import axios from 'axios';
-
+import BASE_URL from "../../api.js";
 const PostJob = () => {
   const [formData, setFormData] = useState({
     title: '',
@@ -21,7 +21,7 @@ const PostJob = () => {
     e.preventDefault();
 
     try {
-  const response = await axios.post('http://localhost:3000/recruiter/post-job', formData, {
+  const response = await axios.post(`${BASE_URL}/recruiter/post-job`, formData, {
     withCredentials: true
   });
 
