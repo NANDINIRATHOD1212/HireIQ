@@ -34,7 +34,7 @@ const store = new SequelizeStore({ db: sequelize });
 
 
 app.use(cors({
-  origin: 'https://hireiq-frontend-dar5.onrender.com',
+  origin: 'https://hireiq-frontend-e3d1.onrender.com',
   credentials: true
 }));
 
