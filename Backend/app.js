@@ -35,7 +35,7 @@ const SequelizeStore = SequelizeStoreImport(session.Store);
 const store = new SequelizeStore({ db: sequelize });
 
 app.use(cors({
-  origin: 'http://localhost:3001', 
+  origin: 'https://hireiq-frontend-kuz8.onrender.com', 
   credentials: true
 }));
 
