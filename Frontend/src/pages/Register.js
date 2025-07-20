@@ -3,6 +3,7 @@ import '../css/Register.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import BASE_URL from '../api.js';
 const Register = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', password: '', role: '' });
@@ -33,15 +34,18 @@ const Register = () => {
       addMessage('Please enter a valid email address.');
       return;
     }
+if (field === 'role') {
+  const roles = ['admin', 'recruiter', 'candidate'];
+  const normalized = value.trim().toLowerCase();
 
-    if (field === 'role') {
-      const roles = ['admin', 'recruiter', 'candidate'];
-      if (!roles.includes(value.toLowerCase())) {
-        addMessage('Please enter a valid role: admin, recruiter, or candidate.');
-        return;
-      }
-      setFormData(prev => ({ ...prev, [field]: value.toLowerCase() }));
-    } else {
+  if (!roles.includes(normalized)) {
+    addMessage('Please enter a valid role: admin, recruiter, or candidate.');
+    return;
+  }
+
+  setFormData(prev => ({ ...prev, [field]: normalized }));
+}
+else {
       setFormData(prev => ({ ...prev, [field]: value }));
     }
 
@@ -64,7 +68,7 @@ const Register = () => {
   addMessage('Registering your account...', 'bot');
 
   try {
-    const res = await axios.post('http://localhost:3000/auth/register', formData, {
+    const res = await axios.post(`${BASE_URL}/auth/register`, formData, {
       withCredentials: true,
     });
     addMessage(res.data.message, 'bot');
@@ -86,7 +90,7 @@ const Register = () => {
 
     addMessage('Verifying OTP...');
     try {
-      const res = await axios.post('http://localhost:3000/auth/verify-otp', { email: formData.email, otp }, { withCredentials: true });
+      const res = await axios.post(`${BASE_URL}/auth/verify-otp`, { email: formData.email, otp }, { withCredentials: true });
       addMessage(res.data.botMessage || res.data.message);
       addMessage('You can now login.');
       setStep('done');

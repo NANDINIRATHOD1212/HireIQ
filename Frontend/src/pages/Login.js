@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/slices/authSlice.js';
 import { Link } from 'react-router-dom';
-
+import BASE_URL from '../api.js';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const Login = () => {
         setResetEmail(value.trim());
         try {
           const res = await axios.post(
-            'http://localhost:3000/auth/send-reset-otp',
+            `${BASE_URL}/auth/send-reset-otp`,
             { email: value.trim() },
             { withCredentials: true }
           );
@@ -78,7 +78,7 @@ const Login = () => {
         setNewPassword(value.trim());
         try {
           const res = await axios.post(
-            'http://localhost:3000/auth/reset-password',
+            `${BASE_URL}/auth/reset-password`,
             {
               email: resetEmail,
               otp: resetOtp,
@@ -107,7 +107,7 @@ const Login = () => {
   const attemptLogin = async (data) => {
     addMessage('Logging you in...', 'bot');
     try {
-      const res = await axios.post('http://localhost:3000/auth/login', data, { withCredentials: true });
+      const res = await axios.post(`${BASE_URL}/auth/login`, data, { withCredentials: true });
       addMessage(res.data.message, 'bot');
 
       const user = res.data.user;
@@ -129,7 +129,7 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.open('http://localhost:3000/auth/google', '_self');
+    window.open(`${BASE_URL}/auth/google`, '_self');
   };
 
   const handleSubmit = (e) => {
