@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",   
+  "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node scripts/fix-pdf-parse.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "connect-session-sequelize": "^7.1.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "firebase": "^11.9.0",
+    "firebase-admin": "^13.4.0",
+    "fs": "^0.0.1-security",
+    "mammoth": "^1.9.1",
+    "multer": "^2.0.0",
+    "mysql2": "^3.14.1",
+    "nodemailer": "^7.0.3",
+    "otp-generator": "^4.0.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "pdf-parse": "^1.1.1",
+    "sequelize": "^6.37.7"
+  }
+}

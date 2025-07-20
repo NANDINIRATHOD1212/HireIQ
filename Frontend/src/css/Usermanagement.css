@@ -1,0 +1,83 @@
+.user-management-container {
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-management-container h2 {
+  color: #0a85ff;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background: #0d6efd !important;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+  background-color: #e7f1ff;
+}
+
+.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #67f006;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #08dc44;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+.btn-success {
+  background-color: #198754;
+}
+
+.btn-success:hover {
+  background-color: #146c43;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5c636a;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  box-shadow: none;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, 0.25);
+}

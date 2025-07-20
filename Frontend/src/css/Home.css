@@ -1,0 +1,402 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #d0e4fc, #2575fc);
+  color: #222;
+  padding: 100px 0 80px;
+  text-align: center;
+}
+
+.hero span {
+  color: #1a4dbd;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.btn-group .btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #2575fc, #1a4dbd);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2575fc;
+  border: 2px solid #2575fc;
+}
+
+.btn-outline:hover {
+  background-color: #2575fc;
+  color: white;
+}
+
+/* Section Titles */
+.features h2,
+.roles h2,
+.latest-jobs h2,
+.testimonials h2,
+.stats h2,
+.demo-video h2,
+.newsletter h2,
+.faqs h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2575fc;
+  font-size: 2rem;
+}
+
+/* Features Section */
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 250px;
+  flex: 1 1 250px;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Roles Section */
+.roles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.role-card {
+  background: linear-gradient(135deg, #1a4dbd, #2575fc);
+  color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  width: 220px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+
+.role-card:hover {
+  transform: scale(1.05);
+}
+
+/* Latest Jobs */
+.latest-jobs ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+.job-item {
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.job-item strong {
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+}
+
+/* Testimonials */
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  min-width: 280px;
+  flex: 1 1 280px;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+.testimonial-card h4 {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2575fc;
+  font-size: 1rem;
+}
+
+/* Stats Section */
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #2575fc;
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 180px;
+  transition: transform 0.3s ease;
+  font-weight: bold;
+}
+
+.stat-card:hover {
+  transform: scale(1.08);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Demo Video */
+.video-placeholder {
+  background: #f2f2f2;
+  height: 200px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Newsletter */
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 0.75rem 1rem;
+  border-radius: 25px;
+  border: 2px solid #2575fc;
+  font-size: 1rem;
+  width: 260px;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.8rem;
+  border-radius: 25px;
+  background: linear-gradient(to right, #1a4dbd, #2575fc);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-weight: 600;
+}
+
+.newsletter-form button:hover {
+  transform: scale(1.05);
+}
+
+.success-msg {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* FAQ */
+.faq-item {
+  background: white;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.faq-item summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+/* === Animated Gradient Background === */
+.hero {
+  background: linear-gradient(-45deg, #d0e4fc, #2575fc, #a4c8ff);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typing Text Animation */
+.typing-text {
+  width: 26ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #2575fc;
+  animation: typing 3.5s steps(26), blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 26ch }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Fade & Slide Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1,
+.typing-text,
+.hero .description,
+.hero .btn-group {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero h1 { animation-delay: 0.2s; }
+.typing-text { animation-delay: 0.4s; }
+.hero .description { animation-delay: 0.6s; }
+.hero .btn-group { animation-delay: 0.8s; }
+
+/* Staggered Fade */
+.features-grid .feature-card,
+.roles-grid .role-card,
+.testimonial-card,
+.stat-card,
+.faq-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Glassmorphism Upgrade */
+.feature-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Floating Button */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2575fc;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: none;
+}
+@media (max-width: 768px) {
+  .floating-btn {
+    display: block;
+  }
+}

@@ -1,0 +1,31 @@
+.take-assessment {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.take-assessment h3 {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.take-assessment label {
+  font-weight: 500;
+  color: #34495e;
+}
+
+textarea.form-control {
+  font-size: 15px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.btn-success {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
+}
