@@ -1,5 +1,5 @@
 
 
-const BASE_URL = "https://hireiq-fullstack-na2a.onrender.com";
+const BASE_URL = "https://hireiq-full-stack.onrender.com";
 
 export default BASE_URL;
