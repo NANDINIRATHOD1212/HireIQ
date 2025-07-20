@@ -39,7 +39,7 @@ router.get(
     const role = req.user.role || 'candidate';
     console.log('Redirecting to dashboard of role:', role);
 
-    res.redirect(`https://hireiq-frontend-e3d1.onrender.com/dashboard-${role}`);
+    res.redirect(`http://localhost:3001/dashboard-${role}`);
   }
 );
 

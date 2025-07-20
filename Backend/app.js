@@ -29,12 +29,13 @@ import candidateAssessementRoutes from './routes/candidateAssessmentRoutes.js';
 const app = express();
 
 
+app.set('trust proxy', 1);
+
 const SequelizeStore = SequelizeStoreImport(session.Store);
 const store = new SequelizeStore({ db: sequelize });
 
-
 app.use(cors({
-  origin: 'https://hireiq-frontend-e3d1.onrender.com',
+  origin: 'http://localhost:3001', 
   credentials: true
 }));
 
@@ -48,18 +49,17 @@ app.use(session({
   saveUninitialized: false,
   store: store,
   cookie: {
-    secure: true,           
+    secure: true,            
     httpOnly: true,
     sameSite: 'None',        
-    maxAge: 1000 * 60 * 60   
+    maxAge: 1000 * 60 * 60   // 1 hour
   }
 }));
 
-store.sync(); 
+store.sync();
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 app.use('/auth', authRoutes);
 app.use('/', adminRoutes);
@@ -100,12 +100,13 @@ Interview.belongsTo(User, { foreignKey: 'candidateId', as: 'candidate' });
 User.hasMany(Interview, { foreignKey: 'recruiterId', as: 'recruiterInterviews' });
 Interview.belongsTo(User, { foreignKey: 'recruiterId', as: 'recruiter' });
 
+
 const startApp = async () => {
   try {
     await connectDB();
     await sequelize.sync({ alter: true });
-    console.log(' All models synced!');
-    app.listen(3000, () => console.log('Server running at http://localhost:3000'));
+    console.log('All models synced!');
+    app.listen(3000, () => console.log('🚀 Server running at http://localhost:3000'));
   } catch (err) {
     console.error(' Error starting server:', err);
   }
